@@ -1,0 +1,25 @@
+.generalDiv {
+    padding: 5px;
+}
+.seekBar{
+    width: 100%;
+    border: 1px solid black;
+    position: relative;
+    height: 2.5px;
+    border-radius: 15px;
+    background-color: lightgray;
+}
+.watchedPart{
+    position: absolute;
+    background-color: red;
+    height: 2.5px;
+}
+.indicator{
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: -7px;
+    right: -7px;
+}

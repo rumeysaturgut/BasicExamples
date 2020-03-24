@@ -1,0 +1,62 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SeekBar</title>
+    <link rel="stylesheet" type="text/css" href="./index.css"/>
+    <script src="./lib/jquery-3.4.1.min.js"></script>
+</head>
+<body onload="docReady()" onkeydown="" onkeyup="">
+<script>
+    let width = 0;
+    function docReady(){
+        document.body.appendChild(getHtml());
+        document.addEventListener("keydown", function(event) {
+            //console.log(event.keyCode);
+            let element = document.querySelector(".watchedPart");
+            switch (event.keyCode) {
+                case 37:
+                    moveLeft(element);
+                    break;
+                case 39:
+                    moveRight(element);
+                    break;
+            }
+        })
+    }
+    function moveRight(element) {
+        console.log(width);
+        if(width < 100) {
+            width = width + 1;
+            element.style.width = "" + width + "%";
+        }
+    }
+    function moveLeft(element) {
+        if(width>0){
+            width = width - 1;
+            element.style.width = "" + width + "%";
+        }
+    }
+    function getHtml() {
+        console.log("getHtml calisti");
+
+        const seekBar = document.createElement("div");
+        seekBar.classList.add("seekBar");
+
+        const watchedBar = document.createElement("div");
+        watchedBar.classList.add("watchedPart");
+
+        const circle = document.createElement("span");
+        circle.classList.add("indicator");
+
+        const html = document.createElement("div");
+        html.classList.add("generalDiv");
+
+        watchedBar.append(circle);
+        seekBar.append(watchedBar);
+        html.append(seekBar);
+
+        return html;
+    }
+</script>
+</body>
+</html>

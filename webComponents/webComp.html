@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Document</title>
+    <script type="text/javascript">
+        class MyComponent extends HTMLElement {
+            constructor() {
+                super()
+                this.name = "rumeysa"
+                this.surname = "turgut"
+            }
+            connectedCallback() {
+                this.style.fontSize = this.getAttribute("size");
+                this.innerHTML = "<p>" + this.name +" "+ this.surname +"</p>";
+            }
+        }
+        window.customElements.define("my-component",MyComponent);
+    </script>
+</head>
+<body>
+    <my-component size="40px"></my-component>
+</body>
+</html>
